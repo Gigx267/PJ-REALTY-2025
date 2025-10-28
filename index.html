@@ -1022,9 +1022,53 @@
                     <a href="feature.html">Features</a>
                     <a href="contact.html">Contact</a>
                 </div>
-                <a href="https://wa.me/c/233538761404" class="btn d-none d-lg-block">Whatsapp Us</a>
-                <div class="menu-toggle">
-                    <i class="fas fa-bars"></i>
+                <style>
+                    /* small, local overrides to make the WhatsApp button compact on mobile */
+                    .nav-whatsapp {
+                        padding: 10px 14px;
+                        font-size: 13px;
+                        border-radius: 6px;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 8px;
+                        text-decoration: none;
+                    }
+                    @media (max-width: 992px) {
+                        .nav-whatsapp {
+                            padding: 8px 10px;
+                            font-size: 12px;
+                        }
+                    }
+                    @media (max-width: 576px) {
+                        /* convert to a small circular icon-only button on small phones */
+                        .nav-whatsapp {
+                            padding: 0;
+                            width: 40px;
+                            height: 40px;
+                            justify-content: center;
+                            border-radius: 50%;
+                            font-size: 0; /* hide text visually */
+                        }
+                        .nav-whatsapp .wa-text {
+                            display: none;
+                        }
+                        .nav-whatsapp .wa-icon {
+                            font-size: 18px;
+                        }
+                    }
+                </style>
+
+                <a href="https://wa.me/c/233538761404"
+                   class="btn nav-whatsapp"
+                   aria-label="WhatsApp PJ Realty"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp wa-icon" aria-hidden="true"></i>
+                    <span class="wa-text">Whatsapp Us</span>
+                </a>
+
+                <div class="menu-toggle" aria-label="Open menu" role="button" tabindex="0">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
                 </div>
             </nav>
         </div>
